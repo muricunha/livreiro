@@ -1,0 +1,294 @@
+.section {
+  background-color: var(--color-surface-container-low);
+  padding: 6rem 3rem;
+}
+
+.container {
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho da seção */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .sectionHeader {
+    flex-direction: row;
+  }
+}
+
+.headerText {
+  max-width: 42rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-on-surface);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.sectionDescription {
+  color: var(--color-on-surface-variant);
+  line-height: 1.7;
+}
+
+.exploreLink {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.25rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.exploreLink:hover {
+  opacity: 0.75;
+}
+
+/* Bento Grid */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .bentoGrid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* Card base */
+.card {
+  background-color: var(--color-surface-container-lowest);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.cardTitle {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--color-on-surface);
+  margin-bottom: 1rem;
+}
+
+.cardDescription {
+  color: var(--color-on-surface-variant);
+  line-height: 1.7;
+  max-width: 28rem;
+  margin-bottom: 2rem;
+}
+
+/* Card Estante (7 colunas) */
+.cardShelf {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .cardShelf {
+    grid-column: span 7;
+  }
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+.bookCovers {
+  display: flex;
+  gap: 1rem;
+  height: 16rem;
+  margin-top: 1rem;
+  transform: translateY(2rem);
+  transition: transform 0.5s ease;
+}
+
+.cardShelf:hover .bookCovers {
+  transform: translateY(1rem);
+}
+
+.bookCoverWrapper {
+  width: 10rem;
+  aspect-ratio: 2 / 3;
+  background-color: var(--color-surface-variant);
+  box-shadow: 0 10px 30px rgba(27, 28, 25, 0.12);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bookCover1 {
+  transform: rotate(-4deg);
+}
+
+.bookCover2 {
+  transform: rotate(2deg) translateY(1rem);
+}
+
+.bookCover3 {
+  transform: rotate(-1deg) translateY(2rem);
+}
+
+.bookCoverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Progresso (5 colunas) */
+.cardProgress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-surface);
+  border: 1px solid rgba(209, 197, 184, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .cardProgress {
+    grid-column: span 5;
+  }
+}
+
+.progressBar {
+  width: 100%;
+  background-color: var(--color-surface-container);
+  border-radius: var(--radius-full);
+  height: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  background-color: var(--color-primary);
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.6s ease;
+}
+
+.progressLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+  color: var(--color-on-surface);
+}
+
+/* Card Descobertas (12 colunas — full width) */
+.cardDiscovery {
+  background-color: var(--color-on-surface);
+  color: var(--color-surface);
+  padding: 4rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .cardDiscovery {
+    grid-column: span 12;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.discoveryGlow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 33%;
+  height: 100%;
+  background: rgba(112, 88, 54, 0.1);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.discoveryEyebrow {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary-fixed-dim);
+  margin-bottom: 1rem;
+}
+
+.cardTitleLight {
+  color: var(--color-surface);
+}
+
+.discoveryDescription {
+  color: rgba(219, 218, 213, 0.8);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.discoveryText {
+  position: relative;
+  z-index: 1;
+}
+
+.discoveryButton {
+  border: 2px solid var(--color-primary-fixed-dim);
+  color: var(--color-primary-fixed-dim);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-label);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.discoveryButton:hover {
+  background-color: var(--color-primary-fixed-dim);
+  color: var(--color-on-surface);
+}
+
+.discoveryImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.discoveryImgWrapper {
+  aspect-ratio: 1;
+  background-color: rgba(234, 232, 227, 0.2);
+  padding: 0.25rem;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+.discoveryImgOffset {
+  margin-top: 3rem;
+}
+
+.discoveryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

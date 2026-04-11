@@ -1,0 +1,6 @@
+/* App.css — estilos específicos do componente raiz */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}

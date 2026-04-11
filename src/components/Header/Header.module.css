@@ -1,0 +1,87 @@
+.header {
+  background-color: var(--color-surface-bright);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.header:hover {
+  border-color: var(--color-outline-variant);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  width: 100%;
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  color: var(--color-on-background);
+  letter-spacing: -0.04em;
+  font-style: italic;
+}
+
+.navLinks {
+  display: none;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .navLinks {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-on-background);
+  transition: color 0.3s ease;
+  padding-bottom: 0.25rem;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+.navLinkActive {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loginButton {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 0.625rem 2rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-label);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.loginButton:hover {
+  opacity: 0.9;
+}
+
+.loginButton:active {
+  transform: scale(0.95);
+}

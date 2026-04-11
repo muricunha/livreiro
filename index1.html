@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Livreiro</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#e4e2dd",
+            "surface-container-highest": "#e4e2dd",
+            "primary": "#705836",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#1b1c1c",
+            "on-tertiary-container": "#fffcfb",
+            "inverse-surface": "#30312e",
+            "secondary-container": "#dce5a3",
+            "on-secondary-container": "#5f6732",
+            "tertiary": "#5c5c5c",
+            "on-surface": "#1b1c19",
+            "on-secondary-fixed": "#191e00",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#e1c298",
+            "tertiary-fixed": "#e4e2e1",
+            "tertiary-container": "#757474",
+            "primary-container": "#8a704c",
+            "surface-tint": "#725a38",
+            "background": "#fbf9f4",
+            "secondary": "#5a632e",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#f5f3ee",
+            "surface-bright": "#fbf9f4",
+            "secondary-fixed-dim": "#c3cc8c",
+            "inverse-on-surface": "#f2f1ec",
+            "on-primary-fixed": "#291800",
+            "tertiary-fixed-dim": "#c8c6c6",
+            "on-tertiary-fixed-variant": "#474747",
+            "surface": "#fbf9f4",
+            "on-background": "#1b1c19",
+            "outline-variant": "#d1c5b8",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#fffbff",
+            "outline": "#7f756a",
+            "surface-container": "#f0eee9",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#ffddb2",
+            "on-primary-fixed-variant": "#594323",
+            "surface-container-high": "#eae8e3",
+            "surface-dim": "#dbdad5",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#4e453c",
+            "inverse-primary": "#e1c298",
+            "on-secondary-fixed-variant": "#434b18",
+            "secondary-fixed": "#dfe8a6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Newsreader"],
+            "body": ["Work Sans"],
+            "label": ["Work Sans"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .arch-mask {
+      border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+      overflow: hidden;
+    }
+
+    .text-balance {
+      text-wrap: balance;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed-variant">
+  <!-- TopAppBar -->
+  <header class="bg-[#fbf9f4] dark:bg-stone-900 sticky top-0 z-50">
+    <nav class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+      <div class="text-2xl font-serif text-[#1b1c19] dark:text-[#fbf9f4] tracking-tighter" style="">Livreiro</div>
+      <div class="hidden md:flex items-center space-x-10">
+        <a class="text-[#705836] dark:text-[#8a704c] border-b-2 border-[#705836] pb-1 font-['Work_Sans'] uppercase text-[0.75rem] tracking-widest transition-colors duration-300"
+          href="#" style="">Home</a>
+        <a class="text-[#1b1c19] dark:text-stone-400 font-['Work_Sans'] uppercase text-[0.75rem] tracking-widest hover:text-[#705836] transition-colors duration-300"
+          href="#" style="">Explore</a>
+        <a class="text-[#1b1c19] dark:text-stone-400 font-['Work_Sans'] uppercase text-[0.75rem] tracking-widest hover:text-[#705836] transition-colors duration-300"
+          href="#" style="">About</a>
+      </div>
+      <div class="flex items-center gap-6">
+        <button
+          class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-label text-sm uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all"
+          style="">Entrar</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative px-12 py-24 md:py-32 overflow-hidden">
+      <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-7 z-10">
+          <span class="font-label text-[0.75rem] uppercase tracking-[0.2em] text-secondary mb-6 block"
+            style="">BEM-VINDO AO Livreiro</span>
+          <h1
+            class="font-headline italic text-5xl md:text-7xl lg:text-8xl text-on-surface tracking-tight leading-[0.9] mb-8 text-balance"
+            style="">
+            Sua Biblioteca Digital .
+          </h1>
+          <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed mb-10 text-balance"
+            style="">
+            Organize suas leituras de um jeito bonito, descubra novos livros, acompanhe seu progresso e monte sua
+            estante pessoal. Tudo em um lugar só!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-6">
+            <button
+              class="bg-primary text-on-primary px-10 py-4 rounded-full font-label text-sm uppercase tracking-widest shadow-xl shadow-on-surface/5 hover:bg-primary-container transition-all"
+              style="">
+              Começar Coleção
+            </button>
+            <button class="flex items-center gap-3 font-label text-sm uppercase tracking-widest text-primary group"
+              style="">
+              <span class="" style="">Ver Amostra</span>
+              <span class="w-12 h-px bg-primary transition-all group-hover:w-16"></span>
+            </button>
+          </div>
+        </div>
+        <div class="md:col-span-5 relative">
+          <div class="relative w-full aspect-[4/5] arch-mask bg-surface-container-high shadow-2xl overflow-hidden">
+            <img alt="Luxury Library Interior" class="w-full h-full object-cover"
+              data-alt="Interior of a sunlit classic library with high shelves filled with antique books, warm golden morning light streaming through windows"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAdcpAYHpvhrlzM9I02IPuxWUa6l6j8cYNDiaG6a7F7B6uSoP3Dx2cnsJkZgNbLyVSIJdj4BDdXFoNkk1IzNil6W23dItVc4VC74-s33syNW0CS1SfsjEBCSSGxjUhYGisD12Z81iRWlzHvaYbfrxarjFE3l3pl02Zk730a4GLSlo9-UqTwoY9xYVE6LqoTe2NFfTUJe4dko-Zi5LNUoGzSyTNxeFW0LKXughDltH1qRtEHuDnj67dYeeM6RvcH9LgDznBzq2ZM0A"
+              style="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Bento Grid -->
+    <section class="bg-surface-container-low py-24 px-12">
+      <div class="max-w-screen-2xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div class="max-w-2xl">
+            <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-6 italic tracking-tight" style="">Curadoria
+              para o Leitor Moderno.</h2>
+            <p class="text-on-surface-variant leading-relaxed" style="">Ferramentas desenhadas para quem valoriza não
+              apenas o conteúdo, mas a estética e o ritmo da experiência literária.</p>
+          </div>
+          <div
+            class="font-label text-[0.75rem] uppercase tracking-widest text-primary border-b-2 border-primary pb-1 cursor-pointer"
+            style="">Explore todas as funções</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <!-- Feature 1: Estante -->
+          <div
+            class="md:col-span-7 bg-surface-container-lowest p-10 rounded-lg flex flex-col justify-between group overflow-hidden relative">
+            <div class="z-10">
+              <span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="auto_stories"
+                style="">auto_stories</span>
+              <h3 class="font-headline text-3xl mb-4 italic" style="">Estante Personalizada</h3>
+              <p class="text-on-surface-variant max-w-sm mb-8 leading-relaxed" style="">Organize sua coleção com beleza.
+                Crie categorias, visualize capas em alta resolução e ordene por cor, autor ou sentimento.</p>
+            </div>
+            <div class="relative h-64 mt-4 translate-y-8 group-hover:translate-y-4 transition-transform duration-500">
+              <div class="flex gap-4">
+                <div class="w-40 aspect-[2/3] arch-mask bg-surface-variant shadow-lg rotate-[-4deg]">
+                  <img alt="Book Cover 1" class="w-full h-full object-cover"
+                    data-alt="Minimalist book cover design with clean serif typography and abstract organic shapes on a cream background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtSnnamcv8789ai9xwwUWF-po3HYJMyJ5D09AcTfw-r1vq7Vl6S-WSNop43GYIGG14DHmdv5i8-gNsVhqp6a6NdYQI9kg5OPz-R-8i__4pBIpVFshq09ThamD-Xf4GFKeqk0s09NQYKqtRUCJTCJ-3LlBwGEeIGe0ElYM23ccvMiancboky01k1z7YMSUS2p2WH3qbw2P5wRqSJLJJKTskvZ1UQqE-kpUU2L2X3rj6Vf2MbNV2hCxWMlkb2CXKmm9qtnRB2HYDjxI"
+                    style="">
+                </div>
+                <div class="w-40 aspect-[2/3] arch-mask bg-surface-variant shadow-lg rotate-[2deg] translate-y-4">
+                  <img alt="Book Cover 2" class="w-full h-full object-cover"
+                    data-alt="Classic vintage book cover with gold foil lettering and dark green linen texture"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd4UlBSEFYdmPgqC89P-aj_3Vjq26Z7Lo5SJmUQJEI2pIwxXFdIyYqh6ugfQujOaDcnKFtaPpSC12T_NI0DzNZDtLLfieS97KUkp_mnT2qE27jm2ARys9p6AMY6nGHrngwFv2hIb0Um5x36x6K1zCEEs-l5Pm7geXE3eWy6eAyswh8FD1Q5VVM2GUwRVydJeyyfvJm6Klm6Y11SxDtK87xSV03vWnLcBP7IMPwEYsUvrGWxn3KmSTz_9ect8RHHhGSOQqiikEdKUc"
+                    style="">
+                </div>
+                <div class="w-40 aspect-[2/3] arch-mask bg-surface-variant shadow-lg rotate-[-1deg] translate-y-8">
+                  <img alt="Book Cover 3" class="w-full h-full object-cover"
+                    data-alt="Modern poetry book cover with soft pastel colors and handwritten script title"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe4WR85OBUAGSBPm805KJnPBzyhIXyDAyPS5s7ZngMpmmJ7JTJY0kBDkBR8Phi6vgi0rs32HemSrPyAARgBJ_DJ6zGsVE-VwBcYgp6lc9pCh2TzCTDOm3v9fGV-C4kgKZMtrIvmJBhT4dmflN7Mcl6ajxVgEs0Gs2x2NENJdhWM86hGeTGIA6LX6fRuKXU8CYqTLSZp13eMJo4TgPq5KAqI4pOFafQTmTn45Bzfdwln-wVzWWwdIoEdimiBknNMNPXgQq4oh_naqI"
+                    style="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 2: Progresso -->
+          <div
+            class="md:col-span-5 bg-surface p-10 rounded-lg flex flex-col justify-center border border-outline-variant/10 shadow-sm">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="timeline"
+              style="">timeline</span>
+            <h3 class="font-headline text-3xl mb-4 italic" style="">Acompanhe seu Progresso</h3>
+            <p class="text-on-surface-variant leading-relaxed mb-8" style="">Nunca perca o fio da meada. Registre
+              citações, pensamentos e veja quanto tempo falta para o fim do capítulo através de gráficos elegantes.</p>
+            <div class="w-full bg-surface-container rounded-full h-1 overflow-hidden">
+              <div class="bg-primary h-full w-[65%]"></div>
+            </div>
+            <div class="flex justify-between mt-4 font-label text-[0.65rem] tracking-widest uppercase opacity-60">
+              <span class="" style="">Página 245</span>
+              <span class="" style="">65% Concluído</span>
+            </div>
+          </div>
+          <!-- Feature 3: Descobertas -->
+          <div
+            class="md:col-span-12 bg-on-surface text-surface py-16 px-12 rounded-lg grid grid-cols-1 md:grid-cols-2 items-center gap-12 relative overflow-hidden">
+            <div class="absolute right-0 top-0 w-1/3 h-full bg-primary/10 blur-[100px] pointer-events-none"></div>
+            <div>
+              <span class="font-label text-[0.75rem] uppercase tracking-widest text-primary-fixed-dim mb-4 block"
+                style="">EXCLUSIVO PARA VOCÊ</span>
+              <h3 class="font-headline text-4xl md:text-5xl mb-6 italic" style="">Descobertas Curadas</h3>
+              <p class="text-surface-variant/80 text-lg leading-relaxed mb-10" style="">Novos livros que combinam com
+                você. Nossa curadoria entende seu gosto e sugere obras raras e contemporâneas que ressoam com sua alma.
+              </p>
+              <button
+                class="border-2 border-primary-fixed-dim text-primary-fixed-dim px-8 py-3 rounded-full font-label text-sm uppercase tracking-widest hover:bg-primary-fixed-dim hover:text-on-surface transition-all"
+                style="">Ver Recomendações</button>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="aspect-square arch-mask bg-surface-container-high/20 p-1 backdrop-blur-sm">
+                <img alt="Curated book 1" class="w-full h-full object-cover arch-mask"
+                  data-alt="Artistic photograph of a hardcover book with a minimalist dust jacket resting on a velvet surface"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHg0OshJeaNQXHFqLFF7OLVSHcYBQKOTM68F4YdXwZMl61gI0o0Ghth4hddd5dlsEX_KLYR304sX86O7J-wGfM3SkKp9qA_GkJBupi7RLLloYfes0EpgNzGVqRs-fUQxWHO6jW61FwQaWmwv98eu7013om2jlXLrdfdfor3nAuMOyp4kqRAu9DMiczusfwBl0xgg680EZMzHcJEedh_GLeD1l5_tYldj7nNnpifbrGJBbtbEUy1a88xEf0QJyxN4RWkYSZtjzHgw4"
+                  style="">
+              </div>
+              <div class="aspect-square arch-mask bg-surface-container-high/20 p-1 backdrop-blur-sm mt-12">
+                <img alt="Curated book 2" class="w-full h-full object-cover arch-mask"
+                  data-alt="Close-up of a classic philosophical tome with intricate embossed patterns on the spine"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgK8NTSD2c0U8XZjOijEzX5Y311ZEaGRuJvMGbk5TGG10ywkW6EDpGwpzi_sJsB0_rzo1W4-h4P19-QcHLvNz5kk4n3FA2A9oMa4D4CSuK_SRVbPF0ULOurDpO37Tbir1CIoUVaKg6D-1tSjPsPfO6L44L1Ne0f4D1E7XEYBCu_I5lz_ghNN6uA6WGBrKRx0EylsJUTK0nFiaddSJM2Z8fEDvTw3uiM8DCfZITh1tEqjHGUtwFxtMPVnHxK19K2im7z9hvlXk4LSo"
+                  style="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Aesthetic Quote Section -->
+    <section class="py-32 px-12 text-center max-w-4xl mx-auto">
+      <span class="material-symbols-outlined text-5xl text-outline-variant/40 mb-8" data-icon="format_quote"
+        style="font-variation-settings: &quot;FILL&quot; 1;">format_quote</span>
+      <blockquote class="font-headline italic text-3xl md:text-5xl text-on-surface leading-tight mb-8" style="">
+        "Uma biblioteca não é um luxo, mas uma das necessidades da vida."
+      </blockquote>
+      <cite class="font-label text-sm uppercase tracking-[0.3em] text-on-surface-variant not-italic">— Henry Ward
+        Beecher</cite>
+    </section>
+    <!-- CTA Section -->
+    <section class="mb-24 px-12">
+      <div
+        class="max-w-screen-2xl mx-auto bg-surface-container-high rounded-xl p-16 text-center border border-outline-variant/10">
+        <h2 class="font-headline text-4xl md:text-6xl mb-8 italic tracking-tight" style="">Sua jornada literária merece
+          um lar.</h2>
+        <p class="text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto" style="">Junte-se a milhares de arquivistas
+          digitais e transforme a maneira como você interage com seus livros favoritos.</p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <button
+            class="bg-primary text-on-primary px-12 py-5 rounded-full font-label text-sm uppercase tracking-widest hover:opacity-90 shadow-xl shadow-primary/20 transition-all"
+            style="">Começar Coleção Agora</button>
+          <span class="text-on-surface-variant font-label text-xs uppercase tracking-widest" style="">Grátis por tempo
+            limitado</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-[#f5f3ee] dark:bg-stone-950 font-['Work_Sans'] text-sm tracking-wide py-16 px-12">
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center text-center md:text-left gap-12">
+      <div class="flex flex-col gap-4">
+        <div class="text-lg font-serif text-[#1b1c19] dark:text-stone-200" style="">Livreiro</div>
+        <p class="text-stone-500 dark:text-stone-400 max-w-xs mx-auto md:mx-0" style="">Cultivando o prazer da leitura
+          no mundo digital através do design e da organização.</p>
+      </div>
+      <div class="flex justify-center gap-10">
+        <a class="text-stone-500 dark:text-stone-400 hover:text-[#705836] underline transition-all" href="#"
+          style="">Privacy Policy</a>
+        <a class="text-stone-500 dark:text-stone-400 hover:text-[#705836] underline transition-all" href="#"
+          style="">Terms of Service</a>
+        <a class="text-stone-500 dark:text-stone-400 hover:text-[#705836] underline transition-all" href="#"
+          style="">Librarian Access</a>
+      </div>
+      <div class="md:text-right">
+        <p class="text-stone-500 dark:text-stone-400" style="">© 2026 Livreiro . All rights reserved.</p>
+        <div class="flex md:justify-end gap-6 mt-4 justify-center">
+          <span class="material-symbols-outlined text-stone-400 cursor-pointer hover:text-primary transition-colors"
+            data-icon="share" style="">share</span>
+          <span class="material-symbols-outlined text-stone-400 cursor-pointer hover:text-primary transition-colors"
+            data-icon="mail" style="">mail</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
