@@ -1,22 +1,31 @@
 import type { FC } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import styles from './Header.module.css'
 
 const Header: FC = () => {
+  const location = useLocation()
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.logo}>Livreiro</div>
 
         <div className={styles.navLinks}>
-          <a href="#" className={`${styles.navLink} ${styles.navLinkActive}`}>
+          <Link 
+            to="/" 
+            className={`${styles.navLink} ${location.pathname === '/' ? styles.navLinkActive : ''}`}
+          >
             Home
-          </a>
+          </Link>
           <a href="#features" className={styles.navLink}>
             Explore
           </a>
-          <a href="#about" className={styles.navLink}>
+          <Link 
+            to="/about" 
+            className={`${styles.navLink} ${location.pathname === '/about' ? styles.navLinkActive : ''}`}
+          >
             About
-          </a>
+          </Link>
         </div>
 
         <div className={styles.actions}>
